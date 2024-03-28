@@ -1,0 +1,92 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: black;
+  border: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0bf8f8;
+}
+
+/* styles.css */
+.container {
+  position: relative;
+  height: 100vh; /* full viewport height */
+}
+
+.form-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 400px; /* or any width you prefer */
+}
+
+.form-table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #ee8fd6; /* light metal gray */
+}
+
+.header-cell {
+  background-color: #e0a80d;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+.label-cell {
+  background-color: #1a71f5;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.button-cell {
+  text-align: right; /* Align buttons to the right */
+  padding: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #16da51;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff; /* blue */
+  color: rgba(11, 207, 221, 0.884);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px; /* Add some space between buttons */
+}
+
+button:hover {
+  background-color: #0d85ca; /* darker blue on hover */
+}
