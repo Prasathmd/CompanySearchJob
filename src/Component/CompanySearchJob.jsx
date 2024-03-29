@@ -1,22 +1,34 @@
 // CompanySearchJob.js
 import React, { useState } from 'react';
-
+import { saveCompanyJob } from "../Services/CompanyJobServices";
+import { useParams } from 'react-router-dom';
 function CompanySearchJob() {
+    //id get method
+    const{id}=useParams();
     const [companySearchJob, setCompanySearchJob] = useState({
         jobTitle: '',
         jobSkill: '',
         jobExperience: '',
         salary: ''
     });
-
+     //javascript for submit button
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Create a Job Id=",id);
+        saveCompanyJob(companySearchJob).then(responce => {
+            console.log("Create a Job Id="+responce.data.id);
+            setCompanySearchJob("Create a job Sucessfully="+responce.data.id);
+        })
+        .catch(error => {
+            console.log(error);
+            setCompanySearchJob("Create a job Failed");
+        })
+    }
     function handleChange(e) {
         const { name, value } = e.target;
         setCompanySearchJob({ ...companySearchJob, [name]: value });
     }
 
-    function handleSubmit(e) {
-        // Handle form submission here
-    }
 
     function handleReset() {
         setCompanySearchJob({
@@ -30,6 +42,7 @@ function CompanySearchJob() {
     return (
         <div className="container">
             <div className="form-wrapper">
+            <form onSubmit={handleSubmit}>
                 <table className="form-table">
                     <tbody>
                         <tr>
@@ -53,12 +66,13 @@ function CompanySearchJob() {
                         </tr>
                         <tr>
                             <td colSpan="2" className="button-cell">
-                                <button onClick={handleSubmit}>Submit</button>
+                                <button type="submit" onClick={handleSubmit}>Submit</button>
                                 <button type="reset" onClick={handleReset}>Reset</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                </form>
             </div>
         </div>
     );
